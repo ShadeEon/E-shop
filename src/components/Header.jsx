@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="sticky w-full shadow-md bg-white">
+    <header className="sticky w-full bg-white">
       <nav className="max-w-8xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <img
-            src="/src/assets/react.svg"
-            alt="react logo"
-            className="h-8 w-8"
-          />
-          <span className="max-w-xl text-xl font-semibold">E-Shop</span>
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src="/src/assets/react.svg"
+              alt="react logo"
+              className="h-8 w-8 cursor-pointer"
+            />
+            <span className="text-xl font-semibold cursor-pointer">E-Shop</span>
+          </Link>
           <div className="relative w-96 mx-auto">
             <div className="bg-white rounded-full border-2 border-gray-100 shadow-md h-10 flex items-center">
               <button
@@ -41,8 +44,8 @@ const Header = () => {
         </div>
         <ul className="flex items-center space-x-6">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/cart"
               className="flex items-center gap-2 text-gray-700 hover:text-gray-900 text-sm"
             >
               <svg
@@ -59,7 +62,7 @@ const Header = () => {
                 />
               </svg>
               Notifications
-            </a>
+            </Link>
           </li>
           <li>
             <a
@@ -82,9 +85,9 @@ const Header = () => {
               Orders
             </a>
           </li>
-         <li>
-            <a
-              href="#"
+          <li>
+            <Link
+              to="/cart"
               className="flex items-center gap-2 text-gray-700 hover:text-gray-900 text-sm"
             >
               <svg
@@ -101,7 +104,7 @@ const Header = () => {
                 />
               </svg>
               Cart
-            </a>
+            </Link>
           </li>
           <li>
             <div className="bg-black px-2 py-2 flex items-center rounded-full">
@@ -118,4 +121,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header

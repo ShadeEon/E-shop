@@ -1,6 +1,6 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import NavDeals from "../components/NavDeals";
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import NavDeals from "../components/NavDeals"
 
 const MainLayout = ({ children }) => {
   return (
@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
       <main>{children}</main>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default MainLayout;
+export default MainLayout

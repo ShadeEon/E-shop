@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useLayoutEffect } from "react";
 import { useProductCategories } from "../hooks/useProductCategories";
 import placeholderIcon from "../assets/react.svg";
 
@@ -13,7 +13,7 @@ function CategoryList() {
   const scrollRef = useRef(null);
   const [showButtons, setShowButtons] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
@@ -24,7 +24,7 @@ function CategoryList() {
     checkOverflow();
     window.addEventListener("resize", checkOverflow);
     return () => window.removeEventListener("resize", checkOverflow);
-  }, []);
+  }, [categories]);
 
   const scroll = (direction) => {
     const el = scrollRef.current;
@@ -63,17 +63,34 @@ function CategoryList() {
       {showButtons && (
         <button
           onClick={() => scroll("prev")}
-          className="absolute top-6 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          className="absolute top-36 left-2 z-30 flex items-center justify-center transform 
+          -translate-y-1/2 cursor-pointer"
         >
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-6 h-6 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/></svg>
-        </span>
+          <span
+            className="inline-flex items-center justify-center w-8 h-8 
+          rounded-full bg-black/30 group-hover:bg-black/50"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </span>
         </button>
       )}
 
       <div
         ref={scrollRef}
-        className="flex flex-row gap-4 overflow-hidden scroll-smooth"
+        className="flex flex-row py-4 gap-4 overflow-hidden scroll-smooth"
       >
         {Array.isArray(categories) &&
           categories.map((category) => (
@@ -81,15 +98,15 @@ function CategoryList() {
               key={category.slug}
               href={`#${category.slug}`}
               className="flex flex-col items-center rounded-xl shadow-md 
-              p-4 w-28 min-w-28 bg-gray-50 border border-gray-200 
+              p-2 flex-none w-[calc((100%/10)-0.9rem)] bg-gray-50 border border-gray-200 
               hover:bg-gray-100 hover:scale-105 transition-transform"
             >
               <img
                 src={placeholderIcon}
                 alt={category.name}
-                className="w-18 h-16 object-cover mb-2"
+                className="w-full h-20 object-cover mb-2 rounded"
               />
-              <span className="text-sm pt-1 font-medium capitalize text-center break-words leading-tight line-clamp-2">
+              <span className="text-xs font-medium capitalize text-center break-words leading-tight line-clamp-2">
                 {category.name}
               </span>
             </a>
@@ -99,11 +116,24 @@ function CategoryList() {
       {showButtons && (
         <button
           onClick={() => scroll("next")}
-          className="absolute top-6 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          className="absolute top-36 right-2 z-30 flex items-center justify-center transform -translate-y-1/2 cursor-pointer"
         >
-          <span class="inline-flex items-center justify-center w-8 h-8 rounded-base bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-6 h-6 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/></svg>
-        </span>
+          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-black/30 group-hover:bg-black/50">
+            <svg
+              className="w-6 h-6 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </span>
         </button>
       )}
     </div>

@@ -12,7 +12,7 @@ function CategoryList() {
 
   const scrollRef = useRef(null);
   const [showButtons, setShowButtons] = useState(false);
-
+  
   useLayoutEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
@@ -57,7 +57,7 @@ function CategoryList() {
   }
 
   return (
-    <div className="relative flex flex-col p-4 bg-white rounded-xl shadow-lg">
+    <div className="relative flex flex-col p-4 bg-[#fffffe] rounded-xl shadow-lg">
       <h1 className="text-2xl font-bold mb-4">Categories</h1>
 
       {showButtons && (
@@ -97,16 +97,18 @@ function CategoryList() {
             <a
               key={category.slug}
               href={`#${category.slug}`}
-              className="flex flex-col items-center rounded-xl shadow-md 
-              p-2 flex-none w-[calc((100%/10)-0.9rem)] bg-gray-50 border border-gray-200 
-              hover:bg-gray-100 hover:scale-105 transition-transform"
+              className="flex flex-col items-center rounded-xl shadow-md p-2 
+              bg-[#d1d1e9] border border-gray-200 hover:bg-[#e45858] hover:text-[#fffffe] hover:scale-105 
+              transition-transform flex-[0_0_calc(50%-1rem)] sm:flex-[0_0_calc(33.33%-1rem)] 
+              md:flex-[0_0_calc(20%-1rem)] lg:flex-[0_0_calc(10%-0.9rem)]"
             >
               <img
                 src={placeholderIcon}
                 alt={category.name}
-                className="w-full h-20 object-cover mb-2 rounded"
+                className="w-full h-20 object-contain mb-2 rounded"
               />
-              <span className="text-xs font-medium capitalize text-center break-words leading-tight line-clamp-2">
+              <span className="text-xs text-[#2b2c34] font-medium capitalize 
+              text-center break-words leading-tight line-clamp-2">
                 {category.name}
               </span>
             </a>

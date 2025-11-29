@@ -13,11 +13,12 @@ export const fetchProductCategories = async () => {
 }
 
 export const fetchProductById = async (id) => {
+    if (!id) throw new Error('Product ID is required')
     const response = await api.get(`/products/${id}`)
     return response.data
 }
 
 export const fetchAllProducts = async () => {
-    const response = await api.get('/products?limit=20')
+    const response = await api.get('/products?limit=12')
     return response.data.products
 }

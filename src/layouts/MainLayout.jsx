@@ -6,7 +6,6 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <NavDeals/>
       <main>{children}</main>
       <Footer />
     </>

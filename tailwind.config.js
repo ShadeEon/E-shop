@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {},
+    screens: {
+      'xs': '320px',
+      // => @media (min-width: 320px) { ... }
+    },  
   },
   plugins: [],
 }

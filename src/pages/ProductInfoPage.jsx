@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"; // 👈 Needed to get the ID from the URL
 import { useProductDetails } from "../hooks/useProductDetails";
 import { fiveStars, getStarClass } from "../utils/ratingUtils";
-import StarIcon from "../components/StarIcon";
+import StarIcon from "../components/ui/StarIcon";
 import calculateDiscountedPrice from "../utils/discountUtils";
 
 function ProductInfoPage() {

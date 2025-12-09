@@ -1,6 +1,6 @@
-import CategoryList from "../components/CatergoryList"
-import ProductList from "../components/ProductList"
-import MainBanner from "../components/MainBanner"
+import CategoryList from "../features/products/CatergoryList"
+import ProductList from "../features/products/ProductList"
+import MainBanner from "../features/home/MainBanner"
 
 const Home = () => {
   return (

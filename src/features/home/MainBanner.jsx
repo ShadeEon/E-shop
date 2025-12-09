@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchBanners } from "../services/bannerService";
-import { useAutoSlider } from "../hooks/useAutoSlider";
+import { fetchBanners } from "../../services/bannerService";
+import { useAutoSlider } from "../../hooks/useAutoSlider";
 
 const MainBanner = () => {
   const [banners, setBanners] = useState([]);
@@ -28,7 +28,7 @@ const MainBanner = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-6 md:grid-rows-6 gap-1 h-[180px] sm:h-[180px] md:h-[260px] lg:h-[300px]">
-      {/* MAIN BIG SLIDER */}
+
       <div className="relative col-span-1 sm:col-span-2 md:col-span-6 md:row-span-4 lg:col-span-4 lg:row-span-6">
         {bigBannerList.map((banner, i) => (
           <img

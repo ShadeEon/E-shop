@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import UserCart from "./pages/UserCart";
 import ProductInfoPage from "./pages/ProductInfoPage";
+import NotFound from "./pages/NotFound";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/cart" element={<UserCart/>}/>
           <Route path="/products/:productId/:productSlug" element={<ProductInfoPage />} />
-          <Route path="*" element={<h1 className="text-center mt-20">Page Not Found</h1>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
     </Router>

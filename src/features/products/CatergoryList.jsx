@@ -1,6 +1,6 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
-import { useProductCategories } from "../hooks/useProductCategories";
-import placeholderIcon from "../assets/react.svg";
+import { useProductCategories } from "../../hooks/useProductCategories";
+import placeholderIcon from "../../assets/react.svg";
 
 function CategoryList() {
   const {

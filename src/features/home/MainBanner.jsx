@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { fetchBanners } from "../../services/bannerService";
 import { useAutoSlider } from "../../hooks/useAutoSlider";
+import BannerSkeleton from "../../components/loading/BannerSkeleton"
 
 const MainBanner = () => {
   const [banners, setBanners] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const load = async () => {
       const data = await fetchBanners();
       setBanners(data);
+      setTimeout(() => setLoading(false), 1200);
     };
     load();
   }, []);
@@ -18,9 +21,7 @@ const MainBanner = () => {
 
   // Show loading placeholder if not enough banners
   if (banners.length < 3) {
-    return (
-      <div className="h-[180px] bg-gray-200 animate-pulse rounded-xl"></div>
-    );
+    return <BannerSkeleton />;
   }
 
   const sideBanner1 = banners[5]?.download_url;

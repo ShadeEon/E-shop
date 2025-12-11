@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom"; // 👈 Needed to get the ID from the URL
+import { useParams } from "react-router-dom";
 import { useProductDetails } from "../hooks/useProductDetails";
-import { fiveStars, getStarClass } from "../utils/ratingUtils";
-import StarIcon from "../components/ui/StarIcon";
-import calculateDiscountedPrice from "../utils/discountUtils";
-import ProductReview from "../features/products/ProductReview";
+import { fiveStars, getStarClass } from "../../../utils/ratingUtils";
+import StarIcon from "../../../components/ui/StarIcon";
+import calculateDiscountedPrice from "../../../utils/discountUtils";
+import ProductReview from "./ProductReview";
 
 function ProductInfoPage() {
   // Get the dynamic part of the URL (e.g., '1' from /products/1)

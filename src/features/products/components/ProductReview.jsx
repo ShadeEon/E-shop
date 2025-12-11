@@ -1,5 +1,5 @@
-import StarIcon from "../../components/ui/StarIcon";
-import { fiveStars, getStarClass } from "../../utils/ratingUtils";
+import StarIcon from "../../../components/ui/StarIcon";
+import { fiveStars, getStarClass } from "../../../utils/ratingUtils";
 
 const ProductReview = ({ product }) => {
   if (!product.reviews || product.reviews.length === 0) {

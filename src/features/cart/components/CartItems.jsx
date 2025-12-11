@@ -1,4 +1,4 @@
-import QuantityButton from "../../components/ui/QuantityButton";
+import QuantityButton from "../../../components/ui/QuantityButton";
 
 const CartItems = () => {
   return (

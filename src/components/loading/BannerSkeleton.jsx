@@ -4,16 +4,34 @@ const BannerSkeleton = () => {
 
       {/* Big Banner */}
       <div className="col-span-1 sm:col-span-2 md:col-span-6 md:row-span-4 lg:col-span-4 lg:row-span-6">
-        <div className="w-full h-full bg-gray-200 animate-pulse rounded-xl"></div>
+        <div className="w-full h-full bg-gray-400 animate-pulse rounded-xl flex items-center justify-center">
+          <img
+            src="/src/assets/placeholder.svg" // replace with your placeholder
+            alt="placeholder"
+            className="w-16 h-16 opacity-50"
+          />
+        </div>
       </div>
 
       {/* Right Side Banners */}
       <div className="hidden md:block col-span-3 row-span-2 row-start-5 lg:col-span-2 lg:row-span-3 lg:col-start-5">
-        <div className="w-full h-full bg-gray-200 animate-pulse rounded-xl"></div>
+        <div className="w-full h-full bg-gray-400 animate-pulse rounded-xl flex items-center justify-center">
+          <img
+            src="/src/assets/placeholder.svg"
+            alt="placeholder"
+            className="w-12 h-12 opacity-50"
+          />
+        </div>
       </div>
 
       <div className="hidden md:block col-span-3 row-span-2 col-start-4 row-start-5 lg:col-span-2 lg:row-span-3 lg:col-start-5 lg:row-start-4">
-        <div className="w-full h-full bg-gray-200 animate-pulse rounded-xl"></div>
+        <div className="w-full h-full bg-gray-400 animate-pulse rounded-xl flex items-center justify-center">
+          <img
+            src="/src/assets/placeholder.svg"
+            alt="placeholder"
+            className="w-12 h-12 opacity-50"
+          />
+        </div>
       </div>
 
     </div>

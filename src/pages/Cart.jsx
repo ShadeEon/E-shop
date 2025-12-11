@@ -1,5 +1,5 @@
-import CartSummary from "../features/cart/CartSummary";
-import CartTable from "../features/cart/CartTable";
+import CartSummary from "../features/cart/components/CartSummary";
+import CartTable from "../features/cart/components/CartTable";
 
 const UserCart = () => {
   return (

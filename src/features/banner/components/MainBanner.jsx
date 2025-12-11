@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { fetchBanners } from "../../services/bannerService";
-import { useAutoSlider } from "../../hooks/useAutoSlider";
-import BannerSkeleton from "../../components/loading/BannerSkeleton"
+import { fetchBanners } from "../services/bannerService";
+import { useAutoSlider } from "../hooks/useAutoSlider";
+import BannerSkeleton from "../../../components/loading/BannerSkeleton"
 
 const MainBanner = () => {
   const [banners, setBanners] = useState([]);
@@ -20,7 +20,7 @@ const MainBanner = () => {
   const { index, next, prev, goTo } = useAutoSlider(bigBannerList.length, 3500);
 
   // Show loading placeholder if not enough banners
-  if (banners.length < 3) {
+  if (loading || banners.length < 3) {
     return <BannerSkeleton />;
   }
 

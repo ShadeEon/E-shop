@@ -1,7 +1,7 @@
-import { useAllProducts } from "../../hooks/useAllProducts";
-import { fiveStars, getStarClass } from "../../utils/ratingUtils";
-import StarIcon from "../../components/ui/StarIcon";
-import { createSlug } from "../../utils/urlUtils";
+import { useAllProducts } from "../hooks/useAllProducts";
+import { fiveStars, getStarClass } from "../../../utils/ratingUtils";
+import StarIcon from "../../../components/ui/StarIcon";
+import { createSlug } from "../../../utils/urlUtils";
 
 function ProductList() {
   const { data: products, isLoading, isError, error } = useAllProducts();
